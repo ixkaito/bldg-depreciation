@@ -1,6 +1,6 @@
 # run `$ compass compile -e production --force` to force compile for production
 
-# require 'bootstrap-sass'
+require 'bootstrap-sass'
 
 http_path = "/"
 preferred_syntax = :scss

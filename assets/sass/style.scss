@@ -1,5 +1,27 @@
 @charset "UTF-8";
 @import "compass";
-// @import "bootstrap-compass";
-// @import "bootstrap-variables";
-// @import "bootstrap";
+@import "bootstrap-compass";
+@import "bootstrap-variables";
+@import "bootstrap";
+@import "sb-admin";
+
+#calculator {
+	margin-top: $grid-gutter-width;
+}
+
+#result {
+
+	> tbody {
+
+		> tr {
+
+			> th {
+				// width: 50%;
+			}
+
+			> td {
+				min-width: 60%;
+			}
+		}
+	}
+}

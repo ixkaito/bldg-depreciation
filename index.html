@@ -1,19 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
 <meta charset="UTF-8" />
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <meta http-equiv="Content-Script-Type" content="text/javascript" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gulp Project</title>
+<title>建物減価償却計算機</title>
 <link rel="stylesheet" href="./assets/css/style.css" type="text/css" media="all" />
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript">window.jQuery || document.write( '<script src="./assets/js/jquery-1.11.1.min.js" type="text/javascript"><\/script>' )</script>
 </head>
 <body>
 
-<!-- <script src="./assets/js/bootstrap.min.js" type="text/javascript"></script> -->
+	<div class="container">
+
+		<div class="row">
+
+			<div class="col-xs-6 col-xs-offset-3">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h1 class="text-center">建物減価償却計算機<br />
+							<small>平成19年4月1日以降取得された場合の定額法</small></h1>
+					</div>
+					<div class="panel-body">
+						<!-- <p>取得年月日：<input type="date" id="date" /></p> -->
+						<div id="calculator" class="form-horizontal">
+							<div class="form-group">
+								<label for="cost" class="col-xs-4 control-label">取得価格：</label>
+								<div class="col-xs-6">
+									<div class="input-group">
+										<div class="input-group-addon">&yen;</div>
+										<input type="text" class="form-control" id="cost" value="20,000,000">
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="life" class="col-xs-4 control-label">耐用年数：</label>
+								<div class="col-xs-6">
+									<div class="input-group">
+										<input type="text" class="form-control" id="life" value="22" />
+										<div class="input-group-addon">年</div>
+									</div>
+									<a href="https://www.keisan.nta.go.jp/survey/publish/34255/faq/34311/faq_34354.php" target="_blank">国税庁建物の耐用年数表</a>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-xs-6 col-xs-offset-4">
+									<div class="checkbox">
+										<label>
+											<input type="checkbox" id="isBiz" value=""> 業務用
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-10 col-xs-offset-1">
+								<div class="alert alert-danger text-center">
+									非業務用の耐用年数は、法定耐用年数の1.5倍<br />
+									1年未満の端数は切り捨て
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-xs-4 col-xs-offset-4">
+									<button id="calculate" class="btn btn-primary btn-block">計算</button>
+								</div>
+							</div>
+						</div>
+
+						<div id="result"></div>
+					</div>
+				</div>
+			</div>
+
+		</div><!-- /.row -->
+
+	</div><!-- /.container -->
+
+<script src="./assets/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="./assets/js/script.min.js" type="text/javascript"></script>
 </body>
 </html>
