@@ -8387,12 +8387,24 @@ table.dataTable thead .sorting:after {
   margin: 15px 0;
 }
 
-/* line 8, ../sass/style.scss */
+/* line 9, ../sass/style.scss */
+body {
+  padding-top: 20px;
+  background-color: #f8f8f8;
+}
+
+@media (min-width: 768px) {
+  /* line 15, ../sass/style.scss */
+  body {
+    padding-top: 50px;
+  }
+}
+/* line 20, ../sass/style.scss */
 #calculator {
   margin-top: 30px;
 }
 
-/* line 22, ../sass/style.scss */
+/* line 34, ../sass/style.scss */
 #result > tbody > tr > td {
   min-width: 60%;
 }

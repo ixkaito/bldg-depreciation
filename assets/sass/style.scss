@@ -5,6 +5,18 @@
 @import "bootstrap";
 @import "sb-admin";
 
+// override sb-admin
+body {
+	padding-top: 20px;
+	background-color: #f8f8f8;
+}
+
+@media(min-width:768px) {
+	body {
+		padding-top: 50px;
+	}
+}
+
 #calculator {
 	margin-top: $grid-gutter-width;
 }
