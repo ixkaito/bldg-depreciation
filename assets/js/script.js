@@ -1,7 +1,5 @@
 // original script file
 
-(function($) {
-
 var depreciationRatio = {
   1:   { straightLine: 1 },
   2:   { straightLine: 0.500 },
@@ -105,11 +103,13 @@ var depreciationRatio = {
   100: { straightLine: 0.010 }
 };
 
-$('#calculate').on('click', function() {
+function calculate() {
 
-  var isBiz = $('#isBiz').is(':checked');
-  var cost  = $('#cost').val() ? parseInt($('#cost').val().split(',').join('').trim(), 10) : 0;
-  var life  = $('#life').val() ? parseInt($('#life').val().split(',').join('').trim(), 10) : 0;
+  var isBiz = document.getElementById('isBiz').checked;
+  var cost  = document.getElementById('cost').value.split(',').join('').trim();
+      cost  = cost ? parseInt(cost, 10) : 0;
+  var life  = document.getElementById('life').value.split(',').join('').trim();
+      life  = life ? parseInt(life, 10) : 0;
       life  = isBiz ? life : Math.floor(life * 1.5);
   var ratio = depreciationRatio[life].straightLine;
 
@@ -147,9 +147,7 @@ $('#calculate').on('click', function() {
       '</tbody>' +
     '</table>';
 
-    $('#cost').val(cost.toLocaleString());
-    $('#result').html('').append(result);
+  document.getElementById('cost').value = cost.toLocaleString();
+  document.getElementById('result').innerHTML = result;
 
-});
-
-})(jQuery);
+}
